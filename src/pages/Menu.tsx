@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ChefSpecials from "@/components/menu/ChefSpecials";
 
 type MenuItem = {
   id: number;
@@ -171,6 +172,9 @@ const Menu = () => {
         {/* Menu Section */}
         <section className="py-16 px-4">
           <div className="container mx-auto">
+            {/* Chef Specials Section */}
+            <ChefSpecials />
+            
             {/* Categories Filter */}
             <div className="mb-12 animate-on-scroll">
               <div className="flex flex-wrap justify-center gap-2 md:gap-4">

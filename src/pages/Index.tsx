@@ -7,6 +7,7 @@ import ParallaxFeatured from "@/components/home/ParallaxFeatured";
 import ParallaxMenuPreview from "@/components/home/ParallaxMenuPreview";
 import ParallaxTestimonials from "@/components/home/ParallaxTestimonials";
 import ParallaxNewsletter from "@/components/home/ParallaxNewsletter";
+import ParallaxChefs from "@/components/home/ParallaxChefs";
 import { setupScrollAnimations } from "@/lib/animation";
 import { commonBg } from "@/assets/images";
 
@@ -35,6 +36,7 @@ const Index = () => {
         <ParallaxHero />
         <ParallaxFeatured />
         <ParallaxMenuPreview />
+        <ParallaxChefs />
         <ParallaxTestimonials />
         <ParallaxNewsletter />
       </main>
