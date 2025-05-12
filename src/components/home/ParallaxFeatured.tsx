@@ -1,13 +1,14 @@
 
 import { Link } from 'react-router-dom';
 import ParallaxSection from '../layout/ParallaxSection';
-import { aboutBg } from '@/assets/images';
+import { aboutBg, commonBg } from '@/assets/images';
 
 export default function ParallaxFeatured() {
   return (
     <ParallaxSection 
       backgroundImage={aboutBg} 
       overlayOpacity={0.7}
+      blurAmount={1}
       className="py-20"
     >
       <div className="container mx-auto px-4">
@@ -26,25 +27,25 @@ export default function ParallaxFeatured() {
             {
               title: "Culinary Excellence",
               description: "Our award-winning chefs create masterpieces that blend traditional techniques with innovative ideas.",
-              image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+              image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
               delay: 200
             },
             {
               title: "Elegant Atmosphere",
               description: "Immerse yourself in our tastefully designed interior, creating the perfect backdrop for your dining experience.",
-              image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGludGVyaW9yfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+              image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
               delay: 400
             },
             {
               title: "Perfect Moments",
               description: "Whether it's a romantic dinner, family gathering, or special celebration, we create memories that last.",
-              image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+              image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
               delay: 600
             }
           ].map((feature, index) => (
             <div
               key={index}
-              className="animate-on-scroll overflow-hidden rounded-lg bg-white/90 backdrop-blur-sm shadow-md transition-all hover:-translate-y-1 hover:shadow-lg"
+              className="animate-on-scroll bg-white/90 backdrop-blur-sm rounded-lg shadow-md overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg"
               style={{ transitionDelay: `${feature.delay}ms` }}
             >
               <div className="aspect-[4/3] overflow-hidden">

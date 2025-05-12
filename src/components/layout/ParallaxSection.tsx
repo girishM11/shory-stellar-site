@@ -10,6 +10,7 @@ interface ParallaxSectionProps {
   blurAmount?: number;
   speed?: number;
   minHeight?: string;
+  useCommonBackground?: boolean;
 }
 
 export default function ParallaxSection({
@@ -20,6 +21,7 @@ export default function ParallaxSection({
   blurAmount = 0,
   speed = 0.15,
   minHeight = "min-h-screen",
+  useCommonBackground = false,
 }: ParallaxSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
@@ -79,10 +81,11 @@ export default function ParallaxSection({
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
+          backgroundAttachment: useCommonBackground ? 'fixed' : 'scroll',
         }}
       />
       
-      {/* Overlay */}
+      {/* Glassmorphism Overlay */}
       <div 
         className="absolute inset-0"
         style={{
