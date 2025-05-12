@@ -2,54 +2,28 @@
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Hero from "@/components/home/Hero";
-import FeaturedSection from "@/components/home/FeaturedSection";
-import MenuPreview from "@/components/home/MenuPreview";
-import Testimonials from "@/components/home/Testimonials";
-import NewsletterSection from "@/components/home/NewsletterSection";
+import ParallaxHero from "@/components/home/ParallaxHero";
+import ParallaxFeatured from "@/components/home/ParallaxFeatured";
+import ParallaxMenuPreview from "@/components/home/ParallaxMenuPreview";
+import ParallaxTestimonials from "@/components/home/ParallaxTestimonials";
+import ParallaxNewsletter from "@/components/home/ParallaxNewsletter";
+import { setupScrollAnimations } from "@/lib/animation";
 
 const Index = () => {
   useEffect(() => {
-    const initAnimations = () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-            }
-          });
-        },
-        {
-          root: null,
-          rootMargin: '0px',
-          threshold: 0.1,
-        }
-      );
-
-      const elements = document.querySelectorAll('.animate-on-scroll');
-      elements.forEach((el) => {
-        observer.observe(el);
-      });
-
-      return () => {
-        elements.forEach((el) => {
-          observer.unobserve(el);
-        });
-      };
-    };
-
-    initAnimations();
+    const cleanup = setupScrollAnimations();
+    return cleanup;
   }, []);
 
   return (
     <>
       <Navbar />
       <main className="min-h-screen">
-        <Hero />
-        <FeaturedSection />
-        <MenuPreview />
-        <Testimonials />
-        <NewsletterSection />
+        <ParallaxHero />
+        <ParallaxFeatured />
+        <ParallaxMenuPreview />
+        <ParallaxTestimonials />
+        <ParallaxNewsletter />
       </main>
       <Footer />
     </>
